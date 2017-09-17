@@ -4,6 +4,14 @@
 <!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
 <head>
+<style>
+  .s{
+    margin-left: 400px;
+
+  }
+</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>Login Form</title>
@@ -15,27 +23,41 @@
    <center><h4> Course Mash</h4></center>
    </h3>
 <body>
+<div class="row " >
+  <div class="col-sm-4 s" align="center">
 
-  <section class="container">
-    <div class="login">
-      <h1>Login to course mash</h1>
-      <form method="post" action="">
-        <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
-        <p><input type="password" name="password" value="" placeholder="Password"></p>
-        <p class="remember_me">
-          <label>
-            <input type="checkbox" name="remember_me" id="remember_me">
-            Remember me on this computer
-          </label>
-        </p>
-        <p class="submit"><input type="submit" name="commit" value="Login"></p>
-      </form>
-    </div>
+    <section class="container">
+      <div class="login">
+        <h2>Login to course mash</h2>
+        <hr>
+        <form method="post" action="">
+         <p><input type="text" name="login" value="" placeholder="Username or Email"></p>
+         <p><input type="password" name="password" value="" placeholder="Password"></p>
+         <p class="remember_me">
+           <label>
+             <input type="checkbox" name="remember_me" id="remember_me">
+             Remember me on this computer
+           </label>
+         </p>
+         <p class="submit"><input type="submit" name="commit" value="Login"></p>
+        </form>
+      </div>
+      <div class="login-help">
+       <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
+      </div>
+    </section>
+  </div>
+  <div class="col-sm-4">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
 
-    <div class="login-help">
-      <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
-    </div>
-  </section>
+      <img src="https://us.123rf.com/450wm/morrmota/morrmota1303/morrmota130300001/18392402-vector-tree-in-black-and-white.jpg?ver=6" height="400px" width="400px" >
+  </div>
+</div>
+
 
   <section class="about">
     <p class="about-links">
@@ -63,7 +85,7 @@ if(isset($_POST['commit'])){
   }else{
     $sql1=mysql_fetch_row(mysql_query($sql));
     if($sql1[1]==$pass && $sql1[0]==$email){
-      header("Location: signedup.php");
+      header("Location: department.html");
     }else{
       echo "unsuccessful";
     }
